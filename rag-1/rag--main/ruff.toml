@@ -1,0 +1,15 @@
+# Ruff lint configuration.
+# Mirrors the CI lint gate in .github/workflows/rag_quality_gate.yml, which runs:
+#   ruff check . --select E,F,W --ignore E501
+# Keeping intent explicit here so local `ruff check` runs stay aligned with CI.
+target-version = "py312"
+
+[lint]
+# Line length (E501) is intentionally not enforced, matching the CI invocation.
+ignore = ["E501"]
+
+# rag_lab / its tests use compact one-liners (`a; b`, `if x: return y`, assigned lambdas, short names such as `l`).
+# Real-error rules (F*) and whitespace rules (W*) remain fully enforced there.
+[lint.per-file-ignores]
+"rag_lab/*" = ["E701", "E702", "E731", "E741"]
+"tests/test_lab_*" = ["E701", "E702", "E731", "E741"]

@@ -1,0 +1,18 @@
+{
+  "architectures": [
+    "Adaptive RAG",
+    "CRAG",
+    "Naive RAG",
+    "Parent-Child RAG",
+    "GRACE-\u03a9",
+    "GRACE-\u03a9 + Rerank",
+    "Hybrid Multi-Query",
+    "RAG-Fusion"
+  ],
+  "plots": [
+    "iou_comparison.png",
+    "metrics_heatmap.png",
+    "architecture_comparison.png",
+    "noise_ratio.png"
+  ]
+}
